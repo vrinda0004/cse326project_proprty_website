@@ -1,0 +1,1041 @@
+<html>
+<head>
+    <title> Property Website </title>
+    <meta name="viewport" content="width=device-width, initial-scale= "1" >
+    <style>
+        /*using css to style*/
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+        }
+
+        .header {
+            overflow: hidden;
+            background-color: rgb(52, 51, 54);
+            padding: 20px 10px;
+        }
+
+        .header a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 25px;
+            border-radius: 4px;
+        }
+
+        .header a.logo {
+            font-size: 30px;
+            font-weight: lighter bolder;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-stretch: semi-condensed;
+            font-style: oblique;
+            font-variant: small-caps;
+            font-display: auto;
+            color: peru;
+        }
+   
+        .header a.logo a:hover {
+            color: peru;
+        }
+
+        .row {
+            overflow: hidden;
+            background-color: lightgray;
+            padding: 200px 10px;
+            margin-top: 0px 0px 0px 0px;
+            background-image: url(https://eomcreative.com/hsm2/wp-content/uploads/2014/01/slider1.jpg);
+            opacity:0.8;
+            background-size: 100% 100%;
+            background-attachment: fixed;    
+        }
+
+        header {
+            font-size: 24px;
+            text-align: center;
+            background-color: rgb(129, 114, 114);
+        }
+
+        main {
+            margin-left: 10px;
+        }
+
+        .row2 img {
+            width: 100%;
+            height: 250px;
+            border-radius: 5px;
+        }
+
+        .row2:hover{
+            transform: scale(1.2, 1.2);
+            transition: .3s transform;
+        }
+
+        .row2 img:hover {
+            transform: scale(1, 1);
+            transition: .3s transform;
+        }
+        
+        .row2 {
+            overflow:hidden;
+            background-color: lightgray;
+            width: 270px;
+            display: flex;
+            flex-wrap: wrap;
+            flex: 20%;
+            padding: 2px 2px 40px 2px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: rgb(129, 114, 114);
+            overflow: hidden;
+            padding: 5px 5px;
+            margin-left: 0px;
+            margin-right: 10px;
+            overflow: scroll;
+            max-height: 350px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-width:100%;
+        }
+        /* Ensure proper sizing */
+        * {
+            box-sizing: border-box;
+        }
+
+        .footer {
+            overflow: hidden;
+            background-color: rgb(129, 114, 114);
+            padding: 10px 20px;
+            margin: 20px 10px 0px 10px;
+            text-align: center;
+            text-decoration-color: lightgray;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: rgb(129, 114, 114);
+            overflow: hidden;
+            padding: 5px 5px;
+            /* margin-top: 20px; */
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .img1 {
+            flex: 20%;  /* Set the width of the right column*/
+            background-color: #f1f1f1;  /*Grey background color */
+            padding: 60px;  /* Some padding */
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .img2 {
+            margin-right: 20px;
+        }
+
+        .modal {
+            display: none;
+            position:fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgb(0,0,0);
+            background-color: rgb(0,0,0, 0.8);
+            padding: 10px 10px 10px 10px;
+        }
+        .modal-content {
+            background-color:rgb(0,0,0);
+            background-color: rgb(0,0,0, 0.7);
+            color: white;
+            margin: 10px auto 10px auto;
+            border: 3px solid white;
+            width: 80%;
+        }
+
+        button {
+            width: 10%;
+            height: 7%;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        button:hover{
+            background-color: white;
+            background-color: rgb(255,255, 255, 0.6);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+
+        <a href="#" class="logo">NoBOUNDary<sub></sub></a>
+        <!-- buttons -->
+        <p align="right">
+            <button onclick="document.getElementById('buy').style.display='block'">Buy</button>
+            <button onclick="document.getElementById('rent').style.display='block'">Rent</button>
+            <button onclick="document.getElementById('sell').style.display='block'">Sell</button>
+            <button onclick="document.getElementById('contact').style.display='block'">Contact Us</button>
+            <button onclick="document.getElementById('login').style.display='block'">Log In</button>
+            <button onclick="document.getElementById('signup').style.display='block'">Sign Up</button>
+            <button onclick="document.getElementById('posting').style.display='block'">Post Property</button>
+        </p>
+    </div>
+    <!-- modal forms -->
+    <div id="buy" class="modal" align="center">
+        <form class="modal-content">
+            <h1>Buy Property</h1>
+            <h5>Property Type</h5>
+            <hr>
+            <p>
+                <label>
+                    <select id="select property type">
+                        <option value="0">select property type</option>
+                        <option value="1">Multistorey Apartment</option>
+                        <option value="2">Builder Floor Apartment</option>
+                        <option value="3">Residential House</option>
+                        <option value="4">Villa</option>
+                        <option value="5">Residential Plot</option>
+                        <option value="6">Penthouse</option>
+                        <option value="7">Studio Apartment</option>
+                        <option value="8">Commercial Office Space</option>
+                        <option value="9">Office in IT Park/ SEZ</option>
+                        <option value="10">Commercial Shop</option>
+                        <option value="11">Commercial Showroom</option>
+                        <option value="12">Commercial Land</option>
+                        <option value="13">Warehouse/ Godown</option>
+                        <option value="14">Industrial Land</option>
+                        <option value="15">Industrial Building</option>
+                        <option value="16">Industrial Shed</option>
+                        <option value="17">Agricultural Land</option>
+                        <option value="18">Farm House</option>
+                    </select>
+                </label>
+            </p>
+            <h2>Property Location</h2>
+            <h6>city</h6>
+            <label>
+                <select id="location">
+                    <option value="0">select location</option>
+                    <option value="1">Gurgaon</option>
+                    <option value="2">Noida</option>
+                    <option value="3">New Delhi</option>
+                    <option value="4">New Delhi-Cental</option>
+                    <option value="5">New Delhi-East</option>
+                    <option value="6">New Delhi-West</option>
+                    <option value="7">New Delhi-North</option>
+                    <option value="8">New Delhi-South</option>
+                    <option value="9">New Delhi-Dwarka</option>
+                    <option value="10">New Delhi-Rohini</option>
+                    <option value="11">Greater Noida</option>
+                    <option value="12">Gaziabad</option>
+                    <option value="13">Faridabad</option>
+                    <option value="14">Mumbai-Central Mumbai</option>
+                    <option value="15">Mumbai-South Mumbai</option>
+                    <option value="16">Mumbai-Western Suburbs</option>
+                    <option value="17">Mumbai-Harbour Line</option>
+                    <option value="18">Mumbai-Central Line </option>
+                    <option value="19">Mumbai-North Mumbai</option>
+                    <option value="20">Navi Mumbai</option>
+                    <option value="21">Bangalore</option>
+                    <option value="22">Bangalore-North</option>
+                    <option value="23">Bangalore-East</option>
+                    <option value="24">Bangalore-West</option>
+                    <option value="25">Bangalore-South</option>
+                    <option value="26">Pune</option>
+                    <option value="27">Pune-North</option>
+                    <option value="28">Pune-South</option>
+                    <option value="29">Pune-West</option>
+                    <option value="30">Pune-East</option>
+                    <option value="31">Hyderabad</option>
+                    <option value="32">Hyderabad-North</option>
+                    <option value="33">Hyderabad-West</option>
+                    <option value="34">Hyderabad-South</option>
+                    <option value="35">Hyderabad-East</option>
+                    <option value="36">Chennai</option>
+                    <option value="37">Chennai-North</option>
+                    <option value="38">Chennai-South</option>
+                    <option value="39">Chennai-East</option>
+                    <option value="40">Chennai-West</option>
+                    <option value="41">Ahmedabad</option>
+                    <option value="42">Ahmedabad-North</option>
+                    <option value="43">Ahmedabad-South</option>
+                    <option value="44">Ahmedabad-East</option>
+                    <option value="45">Ahmedabad-West</option>
+                    <option value="46">Ahmedabad-Central</option>
+                    <option value="47">Thane</option>
+                    <option value="48">Lucknow</option>
+                    <option value="49">Kanpur</option>
+                    <option value="50">Chandigarh</option>
+                    <option value="51">Jaipur</option>
+                    <option value="52">Goa</option>
+                    <option value="53">Punjab-Jalandhar</option>
+                    <option value="54">Punjab-Ludhiana</option>
+                    <option value="55">Punjab-Amritsar</option>
+                    <option value="56">Punjab-Patiala</option>
+                    <option value="57">Punjab-Hoshiarpur</option>
+                    <option value="58">Punjab-Pathankot</option>
+                    <option value="59">Haryana-Ambala</option>
+                    <option value="60">Haryana-Karnal</option>
+                    <option value="61">Haryana-Panipat</option>
+                    <option value="62">Himachal Pradesh</option>
+                    <option value="63">Varanasi</option>
+
+                </select>
+            </label>
+            <hr>
+            <div class="clearfix" align="center">
+                <button type="button" onclick="document.getElementById('buy').style.display='none'"
+                    class="canaelbtn">Cancel</button>
+                <button type="submit" class="buybtn">Buy</button>
+                <hr>
+            </div>
+        </form>
+    </div>
+    <div id="rent" class="modal" align="center">
+        <form class="modal-content">
+            <h1>Rent Property</h1>
+            <hr>
+            <h2>Personal Details</h2>
+            <p>i am
+                <label>
+                    <input type="radio" name="radio3">Student
+                    <input type="radio" name="radio3">Bachelor
+                    <input type="radio" name="radio3">Married
+                </label>
+            </p>
+            <h6>Property Type</h6>
+            <p>
+                <label>
+                    <select id="select property type">
+                        <option value="0">select property type</option>
+                        <option value="1">Multistorey Apartment</option>
+                        <option value="2">Builder Floor Apartment</option>
+                        <option value="3">Residential House</option>
+                        <option value="4">Villa</option>
+                        <option value="5">Residential Plot</option>
+                        <option value="6">Penthouse</option>
+                        <option value="7">Studio Apartment</option>
+                        <option value="8">Commercial Office Space</option>
+                        <option value="9">Office in IT Park/ SEZ</option>
+                        <option value="10">Commercial Shop</option>
+                        <option value="11">Commercial Showroom</option>
+                        <option value="12">Commercial Land</option>
+                        <option value="13">Warehouse/ Godown</option>
+                        <option value="14">Industrial Land</option>
+                        <option value="15">Industrial Building</option>
+                        <option value="16">Industrial Shed</option>
+                        <option value="17">Agricultural Land</option>
+                        <option value="18">Farm House</option>
+                    </select>
+                </label>
+            </p>
+            <h2>Property Location</h2>
+            <h6>city</h6>
+            <label>
+                <select id="location">
+                    <option value="0">select location</option>
+                    <option value="1">Gurgaon</option>
+                    <option value="2">Noida</option>
+                    <option value="3">New Delhi</option>
+                    <option value="4">New Delhi-Cental</option>
+                    <option value="5">New Delhi-East</option>
+                    <option value="6">New Delhi-West</option>
+                    <option value="7">New Delhi-North</option>
+                    <option value="8">New Delhi-South</option>
+                    <option value="9">New Delhi-Dwarka</option>
+                    <option value="10">New Delhi-Rohini</option>
+                    <option value="11">Greater Noida</option>
+                    <option value="12">Gaziabad</option>
+                    <option value="13">Faridabad</option>
+                    <option value="14">Mumbai-Central Mumbai</option>
+                    <option value="15">Mumbai-South Mumbai</option>
+                    <option value="16">Mumbai-Western Suburbs</option>
+                    <option value="17">Mumbai-Harbour Line</option>
+                    <option value="18">Mumbai-Central Line </option>
+                    <option value="19">Mumbai-North Mumbai</option>
+                    <option value="20">Navi Mumbai</option>
+                    <option value="21">Bangalore</option>
+                    <option value="22">Bangalore-North</option>
+                    <option value="23">Bangalore-East</option>
+                    <option value="24">Bangalore-West</option>
+                    <option value="25">Bangalore-South</option>
+                    <option value="26">Pune</option>
+                    <option value="27">Pune-North</option>
+                    <option value="28">Pune-South</option>
+                    <option value="29">Pune-West</option>
+                    <option value="30">Pune-East</option>
+                    <option value="31">Hyderabad</option>
+                    <option value="32">Hyderabad-North</option>
+                    <option value="33">Hyderabad-West</option>
+                    <option value="34">Hyderabad-South</option>
+                    <option value="35">Hyderabad-East</option>
+                    <option value="36">Chennai</option>
+                    <option value="37">Chennai-North</option>
+                    <option value="38">Chennai-South</option>
+                    <option value="39">Chennai-East</option>
+                    <option value="40">Chennai-West</option>
+                    <option value="41">Ahmedabad</option>
+                    <option value="42">Ahmedabad-North</option>
+                    <option value="43">Ahmedabad-South</option>
+                    <option value="44">Ahmedabad-East</option>
+                    <option value="45">Ahmedabad-West</option>
+                    <option value="46">Ahmedabad-Central</option>
+                    <option value="47">Thane</option>
+                    <option value="48">Lucknow</option>
+                    <option value="49">Kanpur</option>
+                    <option value="50">Chandigarh</option>
+                    <option value="51">Jaipur</option>
+                    <option value="52">Goa</option>
+                    <option value="53">Punjab-Jalandhar</option>
+                    <option value="54">Punjab-Ludhiana</option>
+                    <option value="55">Punjab-Amritsar</option>
+                    <option value="56">Punjab-Patiala</option>
+                    <option value="57">Punjab-Hoshiarpur</option>
+                    <option value="58">Punjab-Pathankot</option>
+                    <option value="59">Haryana-Ambala</option>
+                    <option value="60">Haryana-Karnal</option>
+                    <option value="61">Haryana-Panipat</option>
+                    <option value="62">Himachal Pradesh</option>
+                    <option value="63">Varanasi</option>
+
+                </select>
+            </label>
+            <hr>
+            <h2>Budget</h2>
+            <label>
+                <select id="budget">
+                    <option value="0">select budget</option>
+                    <option value="1">5k-10k</option>
+                    <option value="2">10k-15k</option>
+                    <option value="3">15k-20k</option>
+                    <option value="4">20k-25k</option>
+                    <option value="6">25k-30k</option>
+                    <option value="7">30k-50k</option>
+                    <option value="8">50k-80k</option>
+                    <option value="9">1 lakh-5 lakh</option>
+                    
+                </select>
+            </label>
+            <hr><br>
+            <div class="clearfix" align="center">
+                <button type="button" onclick="document.getElementById('rent').style.display='none'"
+                    class="cancelbtn">Cancel</button>
+                <button type="submit" class="rentbtn">Rent</button>
+                <hr>
+            </div>   
+        </form>
+    </div>
+
+    <div id="sell" class="modal" align="center">
+        <form class="modal-content">
+            <h1>Sell Property</h1>
+            <hr>
+            <h2>Personal Details</h2>
+            <p>i am
+                <label>
+                    <input type="radio" name="type">Owner
+                    <input type="radio" name="type">Agent
+                    <input type="radio" name="type">Builder
+                </label>
+            </p>
+            <h6>Property Type</h6>
+            <p>
+                <label>
+                    <select id="select property type">
+                        <option value="0">select property type</option>
+                        <option value="1">Multistorey Apartment</option>
+                        <option value="2">Builder Floor Apartment</option>
+                        <option value="3">Residential House</option>
+                        <option value="4">Villa</option>
+                        <option value="5">Residential Plot</option>
+                        <option value="6">Penthouse</option>
+                        <option value="7">Studio Apartment</option>
+                        <option value="8">Commercial Office Space</option>
+                        <option value="9">Office in IT Park/ SEZ</option>
+                        <option value="10">Commercial Shop</option>
+                        <option value="11">Commercial Showroom</option>
+                        <option value="12">Commercial Land</option>
+                        <option value="13">Warehouse/ Godown</option>
+                        <option value="14">Industrial Land</option>
+                        <option value="15">Industrial Building</option>
+                        <option value="16">Industrial Shed</option>
+                        <option value="17">Agricultural Land</option>
+                        <option value="18">Farm House</option>
+                    </select>
+                </label>
+            </p>
+            <h2>Property Location</h2>
+            <h6>city</h6>
+            <label>
+                <select id="location">
+                    <option value="0">select location</option>
+                    <option value="1">Gurgaon</option>
+                    <option value="2">Noida</option>
+                    <option value="3">New Delhi</option>
+                    <option value="4">New Delhi-Cental</option>
+                    <option value="5">New Delhi-East</option>
+                    <option value="6">New Delhi-West</option>
+                    <option value="7">New Delhi-North</option>
+                    <option value="8">New Delhi-South</option>
+                    <option value="9">New Delhi-Dwarka</option>
+                    <option value="10">New Delhi-Rohini</option>
+                    <option value="11">Greater Noida</option>
+                    <option value="12">Gaziabad</option>
+                    <option value="13">Faridabad</option>
+                    <option value="14">Mumbai-Central Mumbai</option>
+                    <option value="15">Mumbai-South Mumbai</option>
+                    <option value="16">Mumbai-Western Suburbs</option>
+                    <option value="17">Mumbai-Harbour Line</option>
+                    <option value="18">Mumbai-Central Line </option>
+                    <option value="19">Mumbai-North Mumbai</option>
+                    <option value="20">Navi Mumbai</option>
+                    <option value="21">Bangalore</option>
+                    <option value="22">Bangalore-North</option>
+                    <option value="23">Bangalore-East</option>
+                    <option value="24">Bangalore-West</option>
+                    <option value="25">Bangalore-South</option>
+                    <option value="26">Pune</option>
+                    <option value="27">Pune-North</option>
+                    <option value="28">Pune-South</option>
+                    <option value="29">Pune-West</option>
+                    <option value="30">Pune-East</option>
+                    <option value="31">Hyderabad</option>
+                    <option value="32">Hyderabad-North</option>
+                    <option value="33">Hyderabad-West</option>
+                    <option value="34">Hyderabad-South</option>
+                    <option value="35">Hyderabad-East</option>
+                    <option value="36">Chennai</option>
+                    <option value="37">Chennai-North</option>
+                    <option value="38">Chennai-South</option>
+                    <option value="39">Chennai-East</option>
+                    <option value="40">Chennai-West</option>
+                    <option value="41">Ahmedabad</option>
+                    <option value="42">Ahmedabad-North</option>
+                    <option value="43">Ahmedabad-South</option>
+                    <option value="44">Ahmedabad-East</option>
+                    <option value="45">Ahmedabad-West</option>
+                    <option value="46">Ahmedabad-Central</option>
+                    <option value="47">Thane</option>
+                    <option value="48">Lucknow</option>
+                    <option value="49">Kanpur</option>
+                    <option value="50">Chandigarh</option>
+                    <option value="51">Jaipur</option>
+                    <option value="52">Goa</option>
+                    <option value="53">Punjab-Jalandhar</option>
+                    <option value="54">Punjab-Ludhiana</option>
+                    <option value="55">Punjab-Amritsar</option>
+                    <option value="56">Punjab-Patiala</option>
+                    <option value="57">Punjab-Hoshiarpur</option>
+                    <option value="58">Punjab-Pathankot</option>
+                    <option value="59">Haryana-Ambala</option>
+                    <option value="60">Haryana-Karnal</option>
+                    <option value="61">Haryana-Panipat</option>
+                    <option value="62">Himachal Pradesh</option>
+                    <option value="63">Varanasi</option>
+
+                </select>
+            </label>
+            <hr>
+            <div class="clearfix" align="center">
+                <button type="button" onclick="document.getElementById('sell').style.display='none'"
+                    class="cancelbtn">Cancel</button>
+                <button type="submit" class="sellbtn">Sell</button>
+                <hr>
+            </div>
+        </form>
+    </div>
+    <div id="contact" class="modal" align="center">
+        <form class="modal-content">
+                <h1>Contact Us</h1><hr>
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Enter your name" name="name" required>
+                
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required><hr>
+                <label >
+                <input type="text"placeholder="write a message">
+                </label><hr>
+                      <!--to increase the text box area by dragging-->
+                <div class="clearfix" align="center">
+                <button type="button" onclick="document.getElementById('contact').style.display='none'" class="canaelbtn">Cancel</button>
+                <button type="submit" class="contactbtn">OK</button><hr>
+                </div>
+        </form>
+    </div>
+
+    <div id="posting" class="modal" align="center">
+        <form class="modal-content">
+            <h1>Sell or Rent your Property</h1>
+            <h5>We've over 1 Lac tenants and buyers for you</h5>
+            <hr>
+            <h2>Personal Details</h2>
+            <p>i am
+                <label>
+                    <input type="radio" name="radio2">Owner
+                    <input type="radio" name="radio2">Agent
+                    <input type="radio" name="radio2">Builder
+                </label>
+            </p>
+            <h2>Property Details</h2>
+            <p>For
+                <label>
+                    <input type="radio" name="radio3">Sale
+                    <input type="radio" name="radio3">Rent
+                    <input type="radio" name="radio3">PG/Hostel
+                </label>
+            </p>
+            <h6>Property Type</h6>
+            <p>
+                <label>
+                    <select id="select property type">
+                        <option value="0">select property type</option>
+                        <option value="1">Multistorey Apartment</option>
+                        <option value="2">Builder Floor Apartment</option>
+                        <option value="3">Residential House</option>
+                        <option value="4">Villa</option>
+                        <option value="5">Residential Plot</option>
+                        <option value="6">Penthouse</option>
+                        <option value="7">Studio Apartment</option>
+                        <option value="8">Commercial Office Space</option>
+                        <option value="9">Office in IT Park/ SEZ</option>
+                        <option value="10">Commercial Shop</option>
+                        <option value="11">Commercial Showroom</option>
+                        <option value="12">Commercial Land</option>
+                        <option value="13">Warehouse/ Godown</option>
+                        <option value="14">Industrial Land</option>
+                        <option value="15">Industrial Building</option>
+                        <option value="16">Industrial Shed</option>
+                        <option value="17">Agricultural Land</option>
+                        <option value="18">Farm House</option>
+                    </select>
+                </label>
+            </p>
+            <h2>Property Location</h2>
+            <h6>city</h6>
+            <label>
+                <select id="location">
+                    <option value="0">select location</option>
+                    <option value="1">Gurgaon</option>
+                    <option value="2">Noida</option>
+                    <option value="3">New Delhi</option>
+                    <option value="4">New Delhi-Cental</option>
+                    <option value="5">New Delhi-East</option>
+                    <option value="6">New Delhi-West</option>
+                    <option value="7">New Delhi-North</option>
+                    <option value="8">New Delhi-South</option>
+                    <option value="9">New Delhi-Dwarka</option>
+                    <option value="10">New Delhi-Rohini</option>
+                    <option value="11">Greater Noida</option>
+                    <option value="12">Gaziabad</option>
+                    <option value="13">Faridabad</option>
+                    <option value="14">Mumbai-Central Mumbai</option>
+                    <option value="15">Mumbai-South Mumbai</option>
+                    <option value="16">Mumbai-Western Suburbs</option>
+                    <option value="17">Mumbai-Harbour Line</option>
+                    <option value="18">Mumbai-Central Line </option>
+                    <option value="19">Mumbai-North Mumbai</option>
+                    <option value="20">Navi Mumbai</option>
+                    <option value="21">Bangalore</option>
+                    <option value="22">Bangalore-North</option>
+                    <option value="23">Bangalore-East</option>
+                    <option value="24">Bangalore-West</option>
+                    <option value="25">Bangalore-South</option>
+                    <option value="26">Pune</option>
+                    <option value="27">Pune-North</option>
+                    <option value="28">Pune-South</option>
+                    <option value="29">Pune-West</option>
+                    <option value="30">Pune-East</option>
+                    <option value="31">Hyderabad</option>
+                    <option value="32">Hyderabad-North</option>
+                    <option value="33">Hyderabad-West</option>
+                    <option value="34">Hyderabad-South</option>
+                    <option value="35">Hyderabad-East</option>
+                    <option value="36">Chennai</option>
+                    <option value="37">Chennai-North</option>
+                    <option value="38">Chennai-South</option>
+                    <option value="39">Chennai-East</option>
+                    <option value="40">Chennai-West</option>
+                    <option value="41">Ahmedabad</option>
+                    <option value="42">Ahmedabad-North</option>
+                    <option value="43">Ahmedabad-South</option>
+                    <option value="44">Ahmedabad-East</option>
+                    <option value="45">Ahmedabad-West</option>
+                    <option value="46">Ahmedabad-Central</option>
+                    <option value="47">Thane</option>
+                    <option value="48">Lucknow</option>
+                    <option value="49">Kanpur</option>
+                    <option value="50">Chandigarh</option>
+                    <option value="51">Jaipur</option>
+                    <option value="52">Goa</option>
+                    <option value="53">Punjab-Jalandhar</option>
+                    <option value="54">Punjab-Ludhiana</option>
+                    <option value="55">Punjab-Amritsar</option>
+                    <option value="56">Punjab-Patiala</option>
+                    <option value="57">Punjab-Hoshiarpur</option>
+                    <option value="58">Punjab-Pathankot</option>
+                    <option value="59">Haryana-Ambala</option>
+                    <option value="60">Haryana-Karnal</option>
+                    <option value="61">Haryana-Panipat</option>
+                    <option value="62">Himachal Pradesh</option>
+                    <option value="63">Varanasi</option>
+
+                </select>
+            </label>
+            <h5>Locality</h5>
+            <label for="Locality"></label>
+            <input type="text" placeholder="Enter Locality" name="locality" required>
+            <hr>
+            <div class="clearfix" align="center">
+                <button type="button" onclick="document.getElementById('posting').style.display='none'"
+                    class="cancelbtn">Cancel</button>
+                <button type="submit" class="postpropertybtn">Post Property</button>
+                <hr>
+            </div>
+        </form>
+
+    </div>
+    <div id="signup" class="modal">
+        <form class="modal-content">
+            <div class="container" align="center">
+                <h1 align="center">Sign Up</h1>
+                <p align="center">Please fill in this form to create an account.</p>
+                <hr align="center">
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                <label align="center">
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                </label>
+
+                <p align="center">By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms &
+                        Privacy</a>.</p>
+
+                <div class="clearfix" align="center">
+                    <button type="button" onclick="document.getElementById('signup').style.display='none'"
+                        class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signupbtn">Sign Up</button>
+                    <hr>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="login" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+        <form class="modal-content">
+            <div class="container" align="center">
+                <h1 align="center">Log In</h1>
+                <p align="center">Please fill in this form to login your account.</p>
+                <hr>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> remember
+                </label>
+                <div class="clearfix" align="center">
+                    <button type="button" onclick="document.getElementById('login').style.display='none'"
+                        class="cancelbtn">Cancel</button>
+                    <button type="submit" class="loginbtn">Login</button>
+                    <hr>
+                </div>
+            </div>
+        </form>
+    </div>
+            <!-- scripting -->
+    <!-- script for buy -->
+    <script>
+        var modal = document.getElementById('buy');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <!-- script for rent -->
+    <script>
+        var modal = document.getElementById('rent');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <!-- script for sell -->
+    <script>
+
+        var modal = document.getElementById('sell');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <!-- script for contact us -->
+     <script>
+        var modal = document.getElementById('contact');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
+    <!-- script for posting -->
+    <script>
+        var modal = document.getElementById('posting');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <!-- script for sign up -->
+    <script>
+        var modal = document.getElementById('signup');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <!-- script for login -->
+    <script>
+        var modal = document.getElementById('login');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+                <!-- code for background image and the selectors on the main page -->
+    <div class="row">
+        <table cellspacing="2" cellpadding="2" bgcolor="transform" align="center" >
+            <tr >
+                <td align="center">
+                    <select id="location">
+                        <option value="0"selected>select location</option>
+                        <option value="1">Gurgaon</option>
+                        <option value="2">Noida</option>
+                        <option value="3">New Delhi</option>
+                        <option value="4">New Delhi-Cental</option>
+                        <option value="5">New Delhi-East</option>
+                        <option value="6">New Delhi-West</option>
+                        <option value="7">New Delhi-North</option>
+                        <option value="8">New Delhi-South</option>
+                        <option value="9">New Delhi-Dwarka</option>
+                        <option value="10">New Delhi-Rohini</option>
+                        <option value="11">Greater Noida</option>
+                        <option value="12">Gaziabad</option>
+                        <option value="13">Faridabad</option>
+                        <option value="14">Mumbai-Central Mumbai</option>
+                        <option value="15">Mumbai-South Mumbai</option>
+                        <option value="16">Mumbai-Western Suburbs</option>
+                        <option value="17">Mumbai-Harbour Line</option>
+                        <option value="18">Mumbai-Central Line </option>
+                        <option value="19">Mumbai-North Mumbai</option>
+                        <option value="20">Navi Mumbai</option>
+                        <option value="21">Bangalore</option>
+                        <option value="22">Bangalore-North</option>
+                        <option value="23">Bangalore-East</option>
+                        <option value="24">Bangalore-West</option>
+                        <option value="25">Bangalore-South</option>
+                        <option value="26">Pune</option>
+                        <option value="27">Pune-North</option>
+                        <option value="28">Pune-South</option>
+                        <option value="29">Pune-West</option>
+                        <option value="30">Pune-East</option>
+                        <option value="31">Hyderabad</option>
+                        <option value="32">Hyderabad-North</option>
+                        <option value="33">Hyderabad-West</option>
+                        <option value="34">Hyderabad-South</option>
+                        <option value="35">Hyderabad-East</option>
+                        <option value="36">Chennai</option>
+                        <option value="37">Chennai-North</option>
+                        <option value="38">Chennai-South</option>
+                        <option value="39">Chennai-East</option>
+                        <option value="40">Chennai-West</option>
+                        <option value="41">Ahmedabad</option>
+                        <option value="42">Ahmedabad-North</option>
+                        <option value="43">Ahmedabad-South</option>
+                        <option value="44">Ahmedabad-East</option>
+                        <option value="45">Ahmedabad-West</option>
+                        <option value="46">Ahmedabad-Central</option>
+                        <option value="47">Thane</option>
+                        <option value="48">Lucknow</option>
+                        <option value="49">Kanpur</option>
+                        <option value="50">Chandigarh</option>
+                        <option value="51">Jaipur</option>
+                        <option value="52">Goa</option>
+                        <option value="53">Punjab-Jalandhar</option>
+                        <option value="54">Punjab-Ludhiana</option>
+                        <option value="55">Punjab-Amritsar</option>
+                        <option value="56">Punjab-Patiala</option>
+                        <option value="57">Punjab-Hoshiarpur</option>
+                        <option value="58">Punjab-Pathankot</option>
+                        <option value="59">Haryana-Ambala</option>
+                        <option value="60">Haryana-Karnal</option>
+                        <option value="61">Haryana-Panipat</option>
+                        <option value="62">Himachal Pradesh</option>
+                        <option value="63">Varanasi</option>  
+
+                    </select>
+                </td>
+                <td align="center">
+                    <select id="location">
+                        <option value="0">select property type</option>
+                        <option value="1">Multistorey Apartment</option>
+                        <option value="2">Builder Floor Apartment</option>
+                        <option value="3">Residential House</option>
+                        <option value="4">Villa</option>
+                        <option value="5">Residential Plot</option>
+                        <option value="6">Penthouse</option>
+                        <option value="7">Studio Apartment</option>
+                        <option value="8">Commercial Office Space</option>
+                        <option value="9">Office in IT Park/ SEZ</option>
+                        <option value="10">Commercial Shop</option>
+                        <option value="11">Commercial Showroom</option>
+                        <option value="12">Commercial Land</option>
+                        <option value="13">Warehouse/ Godown</option>
+                        <option value="14">Industrial Land</option>
+                        <option value="15">Industrial Building</option>
+                        <option value="16">Industrial Shed</option>
+                        <option value="17">Agricultural Land</option>
+                        <option value="18">Farm House</option>
+                    </select>
+
+                </td>
+                <td align="right">
+                    <select id="budget">
+                        <option value="0"selected>budget</option>
+                        <option value="1">5k-10k</option>
+                        <option value="2">10k-15k</option>
+                        <option value="3">15k-20k</option>
+                        <option value="4">20k-25k</option>
+                        <option value="6">25k-30k</option>
+                        <option value="7">30k-50k</option>
+                        <option value="8">50k-80k</option>
+                        <option value="9">1 lakh-5 lakh</option>
+                        <option value="10">5 lakh-10 lakh</option>
+                        <option value="11">10 lakh-20 lakh</option>
+                        <option value="12">20 lakh-30 lakh</option>
+                        <option value="13">30 lakh-50 lakh</option>
+                        <option value="14">50 lakh-80 lakh</option>
+                        <option value="15">80 lakh-1 Cr</option>
+                        <option value="16">1 Cr- 1.5 Cr</option>
+                        <option value="17">1.5 Cr-2 Cr</option>
+                    </select>
+                </td>
+                <td align="right"></td>
+                <td><input type="button" value="search"></td>
+            </tr>
+
+        </table>
+    </div>
+                <!-- code for project gallery -->
+    <main>                  
+        <header>
+            <h1>Project Gallery</h1>
+        </header>
+        <hr />
+        <div class="gallery">
+        <div class="row2"><img src="https://img.staticmb.com/mbimages/project/Photo_h310_w462/2019/02/08/Project-Photo-14-Omaxe-The-Lake-Chandigarh-5086446_500_500_310_462.jpg" ><p><b>Sector 17 Chandigarh</b><br>3 BHK Apartment<br>The Lake,Madhya Mark<br><b>₹​64 Lac</b> </p>    
+        </div>            
+        <div class="row2"><img src="https://img.staticmb.com/mbimages/project/Photo_h310_w462/2020/03/04/Project-Photo-29-Hero-Homes-Ludhiana-Ludhiana-5096847_472_1000_310_462.jpg" >
+            <p><b>Hero Homes Ludhiana</b><br>
+                Hero Realty Pvt Ltd<br> Sidhwan canal Road<br>2,3,4 BHK Flats<br><b>₹​48.6 Lac </b>onwards</p>
+            </div>
+        <div class="row2"><img src="https://is1-2.housingcdn.com/4f2250e8/7250ab8aebf7c4770f9d17a4bd73010f/v5/fs/dlf_the_valley-sector_3_budanpur-panchkula-dlf.jpg">
+        <p><b>DLF The Valley Panchkula</b><br>DLF Limited<br>Sec 3 Panchkula<br>3, 4, 5 BHK Flats & Plots<br><b>₹​75 Lac</b> onwards</p></div>
+
+        <div class="row2"><img src="https://newprojects.99acres.com/projects/bliss_builder_and_developers/bliss_motiaz_royal_citi/images/q1rrojyb.jpg" >
+        <p><b>Bliss ORRA Chandigarh</b><br>Bliss Builders & Promoters<br>Zikarpur<br>3 BHK Flats<br><b>₹​60 Lac </b>onwards</p></div>
+
+        <div class="row2"><img src="https://img.staticmb.com/mbphoto/property/cropped_images/2019/Oct/18/Photo_h300_w450/45500883_2_vasantoasis9_300_450.jpg"><p><b>2 BHK Apartment</b><br>Vasant Oasis,Andheri East<br>Mumbai<br><b>₹​1.37 Cr</b> onwards</p> </div>
+        <div class="row2"><img src="https://img.staticmb.com/mbimages/project/Photo_h310_w462/2018/05/11/Project-Photo-13-Saanvi-Heights-Mumbai-5089212_345_1366_310_462.jpg"><p><b>2 BHK Apartment</b><br>Sanvi Heights, Goregaon West<br>Mumbai<br><b>₹​1.80 Cr</b> onwards</p></div>
+        <div class="row2"><img src="https://is1-2.housingcdn.com/4f2250e8/2add8a02dc1469d4df825c88b45066cc/v0/fs/pahwa_and_co_floors_2_cr_park-chittaranjan_park-delhi-pahwa_%26_co..jpg" ><p><b>3 BHK Builder Floor</b><br>Chittaranjan Park<br>New Delhi<br><b>₹​2.45 Cr</b></p></div>
+
+        <div class="row2"><img src="https://img.staticmb.com/mbimages/project/Photo_h310_w462/Project-Photo-1-Bharat-Luxury-Homes-New-Delhi-5098703_345_1366_310_462.jpg" ><p><b>3 BHK Apartment</b><br>Bharat Luxury Homes, Uttam Nagar<br>New Delhi<br><b>₹​38.5 Lac</b></p></div>
+
+        <div class="row2"><img src="https://img.staticmb.com/mbphoto/property/cropped_images/2019/Jun/02/Photo_h180_w240/38135289_2_38136831_4_godrej-air-in-hoodi-elevation-photo-1kvr_180_240.jpg" ><p><b>3 BHK Apartment</b><br>Hoodi Circle, Hoodi<br>Bangalore<br><b>₹​1.14 Cr</b><br>₹​6291 per sqft</p></div>
+
+        <div class="row2"><img src="https://lh3.googleusercontent.com/proxy/mc4nMOFMp1G4p_YZDT3scQe9PBu3OvSZ_64Q0zZwyjO134Mm-rs2ipbiwgP2br4PqMbVNpA0p2Wg5P1XRxJWNd-_-uBnIKKPm3YIw_WH_qyEvDROxrjVelbXWqr5tb1MUvnV_mE9xg" ><p><b>2 BHK Apartment</b><br>Thanisandra main Road<br>Bangalore<br><b>₹​48.8 Lac</b><br>₹​5166 per sqft</p></div>
+
+        <div class="row2"><img src="https://img.staticmb.com/mbimages/project/Photo_h310_w462/2020/03/05/Project-Photo-12-Praneeth-Jaagaruthi-Elite-Hyderabad-5142263_563_1000_310_462.jpg" ><p><b>3 BHK Apartment</b><br>Kollur, Outer Ring Road<br>Hyderabad<br><b>₹​61 Lac</b></p></div>
+
+        <div class="row2"><img src="https://is1-2.housingcdn.com/01c16c28/50a0f6bc683445723a4d7b504ece9cb9/v0/fs/3_bhk_apartment-for-sale-manikonda-Hyderabad-building_view.jpg" ><p><b>3 BHK Apartment</b><br>Manikonda<br>Hyderabad<br><b>₹​72.3 Lac</b></p></div>
+
+    </div>
+    </main>
+                <!-- code for footer -->
+    <div class="footer">
+        <h1>What Makes Us Prefered Choice</h1><hr>
+    </div>
+    <div class="content">
+        <div class="img1">
+            <img src="https://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/document-icon.png"
+              height="100px" weight="100px">
+            <div class="txt">
+                <h3>Maximum Choices</h3>
+                <hr>
+                <p>New properties every hour to help buyers find the right home</p>
+            </div>
+        </div>
+        <div class="img1">
+            <img src="https://clipartmag.com/images/check-mark-transparent-21.png"
+                height="100px" width="100px">
+            <h3 align="padding-left">Buyers Trust Us</h3>
+            <hr>
+            <p>1 million users visit us every month for their buying and renting needs</p>
+        </div>
+        <div class="img1">
+            <img src="https://images.vexels.com/media/users/3/132467/isolated/preview/daeb489a9da72c270677698e66765a9a-thumbs-up-flat-icon-by-vexels.png"
+                height="100px" width="100px">
+            <h3>Seller Prefer Us</h3>
+            <hr>
+            <p>5,000 new properties posted daily, making us the biggest platform to sell & rent properties</p>
+        </div>
+        <div class="img1 img2">
+            <img src="https://getdrawings.com/free-icon/advice-icon-51.png" height="100px" width="100px">
+            <h3>Expert Guidance</h3>
+            <hr>
+            <p>Advice from the largest panel of industry experts to help you make smart property decisions
+            </p>
+        </div>
+    </div>
+</body>
+</html>
